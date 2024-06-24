@@ -1,0 +1,10 @@
+# Train/val/test sets as
+# 1) dir: path/to/imgs,
+# 2) file: path/to/imgs.txt
+# 3) list: [path/to/imgs1, path/to/imgs2, ..]
+train: D:/Download/yolov8/NEU_Seg-main/train # train images (relative to 'path') 128 images
+val:
+test: D:/Download/yolov8/NEU_Seg-main/test   # test images (optional)
+# Classes
+names:
+  0: A

@@ -1,0 +1,7 @@
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [39m[22mrunning Automatic Mixed Precision (AMP) checks with YOLOv8n...
+[34m[1mAMP: [39m[22mchecks passed ✅
+
+[34m[1mtrain: [39m[22mScanning D:\Download\yolov8\NEU_Seg-main\train\labels... 3630 images, 0 backgrounds, 0 corrupt: 100%|██████████| 3630/3630 [00:01<00:00, 1889.77it/s]
+[34m[1mtrain: [39m[22mNew cache created: D:\Download\yolov8\NEU_Seg-main\train\labels.cache
+[34m[1mval: [39m[22mNew cache created: D:\Download\yolov8\NEU_Seg-main\test\labels.cache

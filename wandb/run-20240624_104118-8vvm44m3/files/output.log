@@ -1,0 +1,113 @@
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [39m[22mrunning Automatic Mixed Precision (AMP) checks with YOLOv8n...
+Downloading https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n.pt to 'yolov8n.pt'...
+
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6.23M/6.23M [00:03<00:00, 1.88MB/s]
+Traceback (most recent call last):
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\19379\.conda\envs\pytorch\Scripts\yolo.exe\__main__.py", line 7, in <module>
+    sys.exit(entrypoint())
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\cfg\__init__.py", line 583, in entrypoint
+    getattr(model, mode)(**overrides)  # default args from model
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 674, in train
+    self.trainer.train()
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 199, in train
+    self._do_train(world_size)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 313, in _do_train
+    self._setup_train(world_size)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 257, in _setup_train
+    self.amp = torch.tensor(check_amp(self.model), device=self.device)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\utils\checks.py", line 659, in check_amp
+    assert amp_allclose(YOLO("yolov8n.pt"), im)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\utils\checks.py", line 646, in amp_allclose
+    a = m(im, device=device, verbose=False)[0].boxes.data  # FP32 inference
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 177, in __call__
+    return self.predict(source, stream, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 453, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\predictor.py", line 168, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Result into one
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\utils\_contextlib.py", line 35, in generator_context
+    response = gen.send(None)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\predictor.py", line 228, in stream_inference
+    self.model.warmup(imgsz=(1 if self.model.pt or self.model.triton else self.dataset.bs, 3, *self.imgsz))
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\autobackend.py", line 627, in warmup
+    self.forward(im)  # warmup
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\autobackend.py", line 453, in forward
+    y = self.model(im, augment=augment, visualize=visualize, embed=embed)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 89, in forward
+    return self.predict(x, *args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 107, in predict
+    return self._predict_once(x, profile, visualize, embed)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 128, in _predict_once
+    x = m(x)  # run
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\modules\conv.py", line 54, in forward_fuse
+    return self.act(self.conv(x))
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\19379\.conda\envs\pytorch\Scripts\yolo.exe\__main__.py", line 7, in <module>
+    sys.exit(entrypoint())
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\cfg\__init__.py", line 583, in entrypoint
+    getattr(model, mode)(**overrides)  # default args from model
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 674, in train
+    self.trainer.train()
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 199, in train
+    self._do_train(world_size)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 313, in _do_train
+    self._setup_train(world_size)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 257, in _setup_train
+    self.amp = torch.tensor(check_amp(self.model), device=self.device)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\utils\checks.py", line 659, in check_amp
+    assert amp_allclose(YOLO("yolov8n.pt"), im)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\utils\checks.py", line 646, in amp_allclose
+    a = m(im, device=device, verbose=False)[0].boxes.data  # FP32 inference
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 177, in __call__
+    return self.predict(source, stream, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 453, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\predictor.py", line 168, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Result into one
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\utils\_contextlib.py", line 35, in generator_context
+    response = gen.send(None)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\predictor.py", line 228, in stream_inference
+    self.model.warmup(imgsz=(1 if self.model.pt or self.model.triton else self.dataset.bs, 3, *self.imgsz))
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\autobackend.py", line 627, in warmup
+    self.forward(im)  # warmup
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\autobackend.py", line 453, in forward
+    y = self.model(im, augment=augment, visualize=visualize, embed=embed)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 89, in forward
+    return self.predict(x, *args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 107, in predict
+    return self._predict_once(x, profile, visualize, embed)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 128, in _predict_once
+    x = m(x)  # run
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\modules\conv.py", line 54, in forward_fuse
+    return self.act(self.conv(x))
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+KeyboardInterrupt

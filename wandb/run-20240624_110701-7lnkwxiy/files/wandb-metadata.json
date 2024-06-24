@@ -1,0 +1,54 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.9.18",
+    "heartbeatAt": "2024-06-24T03:07:03.210717",
+    "startedAt": "2024-06-24T03:07:01.032265",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "task=segment",
+        "mode=train",
+        "model=D:/Download/yolov8/ultralytics-main/weights/yolov8l-seg.pt",
+        "epochs=10",
+        "batch=1",
+        "data=D:/Download/yolov8/ultralytics-main/ultralytics/cfg/myseg.yaml",
+        "device=0"
+    ],
+    "state": "running",
+    "program": "-m __main__",
+    "codePathLocal": null,
+    "host": "\u5f6d\u6e1d\u7693",
+    "username": "19379",
+    "executable": "C:\\Users\\19379\\.conda\\envs\\pytorch\\python.exe",
+    "cpu_count": 14,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2400.0,
+        "min": 0.0,
+        "max": 2400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2400.0,
+            "min": 0.0,
+            "max": 2400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 751.6445274353027,
+            "used": 697.5871162414551
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 15.730522155761719
+    }
+}

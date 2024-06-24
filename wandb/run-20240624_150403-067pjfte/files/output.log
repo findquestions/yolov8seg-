@@ -1,0 +1,84 @@
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [39m[22mrunning Automatic Mixed Precision (AMP) checks with YOLOv8n...
+[34m[1mAMP: [39m[22mchecks passed ✅
+[34m[1mtrain: [39m[22mScanning D:\Download\yolov8\NEU_Seg-main\train\labels.cache... 3630 images, 0 backgrounds, 0 corrupt: 100%|██████████| 3630/3630 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mScanning D:\Download\yolov8\NEU_Seg-main\test\labels.cache... 840 images, 0 backgrounds, 0 corrupt: 100%|██████████| 840/840 [00:00<?, ?it/s]
+Plotting labels to runs\segment\train11\labels.jpg...
+  0%|          | 0/227 [00:00<?, ?it/s]
+[34m[1moptimizer:[39m[22m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+[34m[1moptimizer:[39m[22m AdamW(lr=0.002, momentum=0.9) with parameter groups 106 weight(decay=0.0), 117 weight(decay=0.0005), 116 bias(decay=0.0)
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mruns\segment\train11
+Starting training for 100 epochs...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      1/100      11.2G      2.405      6.029      3.249      2.306         93        640:   7%|▋         | 16/227 [04:57<1:05:25, 18.60s/it]
+Traceback (most recent call last):
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\19379\.conda\envs\pytorch\Scripts\yolo.exe\__main__.py", line 7, in <module>
+    sys.exit(entrypoint())
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\cfg\__init__.py", line 591, in entrypoint
+    getattr(model, mode)(**overrides)  # default args from model
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 650, in train
+    self.trainer.train()
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 204, in train
+    self._do_train(world_size)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 381, in _do_train
+    self.loss, self.loss_items = self.model(batch)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 101, in forward
+    return self.loss(x, *args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 283, in loss
+    return self.criterion(preds, batch)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\utils\loss.py", line 274, in __call__
+    imgsz = torch.tensor(feats[0].shape[2:], device=self.device, dtype=dtype) * self.stride[0]  # image size (h,w)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+Traceback (most recent call last):
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\19379\.conda\envs\pytorch\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\19379\.conda\envs\pytorch\Scripts\yolo.exe\__main__.py", line 7, in <module>
+    sys.exit(entrypoint())
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\cfg\__init__.py", line 591, in entrypoint
+    getattr(model, mode)(**overrides)  # default args from model
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\model.py", line 650, in train
+    self.trainer.train()
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 204, in train
+    self._do_train(world_size)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\engine\trainer.py", line 381, in _do_train
+    self.loss, self.loss_items = self.model(batch)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 101, in forward
+    return self.loss(x, *args, **kwargs)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\nn\tasks.py", line 283, in loss
+    return self.criterion(preds, batch)
+  File "C:\Users\19379\.conda\envs\pytorch\lib\site-packages\ultralytics\utils\loss.py", line 274, in __call__
+    imgsz = torch.tensor(feats[0].shape[2:], device=self.device, dtype=dtype) * self.stride[0]  # image size (h,w)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
